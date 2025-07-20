@@ -1,48 +1,121 @@
+:root {
+  --primary-color: #4e79a7;
+  --secondary-color: #f28e2b;
+  --accent-color: #59a14f;
+  --text-color: #333;
+  --background-color: #f7f7f7;
+  --chart-bg: white;
+  --chart-border: #ddd;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 40px;
-  background-color: #f7f7f7;
-  color: #333;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 20px 40px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-#language-switch {
-  margin-bottom: 20px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--chart-border);
 }
 
-button {
+#language-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+select, button {
   padding: 8px 12px;
-  margin-right: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border: 1px solid var(--chart-border);
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
 }
 
-button:hover {
-  background-color: #0056b3;
+select:focus, button:focus {
+  outline: 2px solid var(--primary-color);
 }
 
-#controls {
-  margin: 20px 0;
+main {
+  display: grid;
+  gap: 40px;
 }
 
-label {
-  margin-right: 10px;
+#description {
+  background-color: var(--chart-bg);
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--chart-border);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-select {
-  margin-right: 20px;
+.chart-container {
+  background-color: var(--chart-bg);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--chart-border);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-section {
-  margin-top: 40px;
+.chart-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
 }
 
 canvas {
   max-width: 100%;
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
+  min-height: 300px;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.chart-note {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--chart-border);
+  font-size: 0.9em;
+  text-align: center;
+}
+
+#data-warning {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  
+  .chart-header, .chart-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
