@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title id="title">Tableau de bord des inscriptions</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="header-title">Tableau de bord des inscriptions universitaires</h1>
+    <select id="languageSelector">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+    </select>
+  </header>
+
+  <main>
+    <section>
+      <h2 id="chart1-title">Répartition des inscriptions par province</h2>
+      <canvas id="chart1"></canvas>
+      <button id="chart1-button">Changer l'année</button>
+    </section>
+
+    <section>
+      <h2 id="chart2-title">Répartition par sexe</h2>
+      <canvas id="chart2"></canvas>
+      <label>
+        <input type="checkbox" id="toggleGender" />
+        <span id="chart2-toggle">Afficher en %</span>
+      </label>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">Source : Universités Canada</p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="data.js"></script>
+  <script src="charts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
