@@ -3,7 +3,7 @@ import EnrollmentChart from './components/EnrollmentChart';
 import TuitionChart from './components/TuitionChart';
 import LanguageSelector from './components/LanguageSelector';
 import UniversityControls from './components/UniversityControls';
-import { universityData } from './data/universityData';
+import { universityData } from './data/Data';
 import { useTranslation } from './context/LanguageContext';
 
 function App() {
